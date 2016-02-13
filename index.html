@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Common Book Browser</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      h2 {
+        text-transform: uppercase;
+      }
+      h2 input {
+        padding-left: 10px;
+        text-transform: uppercase;
+        width: 50%;
+      }
+    </style>
+    <script type="text/javascript">
+      var donts = ["before I meditate", "on an empty stomach", "without being hydrated"]
+      window.onload = function() {
+        setInterval(function() {
+          var dontField = document.getElementById("dont");
+          var currentDontIndex = donts.indexOf(dontField.getAttribute("placeholder"));
+          var nextDontIndex = 0;
+          if((currentDontIndex + 1)== donts.length) {
+            nextDontIndex = 0;
+          } else {
+            nextDontIndex = currentDontIndex + 1;
+          };
+          if(donts[nextDontIndex] == undefined) {
+            console.log(nextDontIndex);
+          }
+          dontField.setAttribute("placeholder", donts[nextDontIndex])
+        }, 3000);
+      }
+    </script>
+  </head>
+  <body>
+    <p>Quitting Smoking Is About Change. Change can start with a single manageable step about one thing which annoys you the most</p>
+    <h2>I don't want to smoke <input id="dont" type="text" placeholder="before I meditate"/></h2>
+    <p>Our counselors anonimously review these tiny changes and help you rewrite them to make them quantifiable. Along the way they help to keep you motivated and see you through your change. You can change!</p>
+    <h3>Bogdan was annoyed by smoking right before meditating.</h3>
+    <ul>
+      <li>How many times a day do you meditate?</li>
+      <li>3 times a day.</li>
+      <li>Why do you dislike smoking right before medidating?</li>
+      <li>It agitates me and I meditate in order to relax</li>
+      <li>On a scale of 1 to 10 how much does it annoys you?</li>
+      <li>8</li>
+      <li>What do you feel when you smoke right before meditate?</li>
+      <li>Like this habit is uncontrollable and I'm starting fires only to put them down right away</li>
+      <li>It's intense but you can change</li>
+      <li>When would be acceptable to smoke if you are meditating in a day</li>
+      <li>Not at all would be ideal</li>
+      <li class="counselor">Yes and you have the ability to change and reach your goal. Let's start small.</li>
+      <li class="counselor">Would it be acceptable to smoke 15 minutes prior to meditating? A cigarette gets absorbed in about 15 minutes and has it's effect ... </li>
+      <li class="user">No</li>
+      <li class="counselor">If you meditate in the morning it might be hard to do it as you are prone to smoke. We might have to change another habit in order to affect this one.</li>
+    </ul>
+
+    <h3>For Bogdan we built a special custom app that was hooked into this meditation program. He also meditated by listening to a song so what we did is create an alarm ... Bogdan has allowed use to share his story to help others.</h3>
+  </body>
+</html>
